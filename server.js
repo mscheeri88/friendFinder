@@ -42,17 +42,14 @@ app.get("/api/friends", function(req, res) {
 
 //============== Post Route, pushes the data to the API page that is being submitted by the user from the form, first we had to import the 'friendsArray' data with the "require" up top, now we can push data to it with the post.  
 
-app.post("/api/friends", userData, function(req, res) {
-  var friendName = req.body.name;  //requewst 
-  var friendScores = parseInt(req.body.scores);
-  console.log("friend score", friendScores);
-  
-  var newFriend = {
-    name: friendName,
-    scores: friendScores
-    }
-    friendsArray.push(newFriend);  //put object in push
-    res.json(newFriend);
+app.post("/api/friends", function(req, res) {
+
+  //put the body of the request object into a variable - we can use later to push to the friendsarray
+  var request = req.body
+  console.log(request, "req");  
+
+    friendsArray.push(request);  //push body data (request variable) into freindsarray
+    
 });
 
 

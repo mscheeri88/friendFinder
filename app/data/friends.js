@@ -5,6 +5,7 @@
 var friendsArray = [
     {
       name: "Ahmed",
+      path: "fun.jpg",
       scores:[2,2,2,2,2,2,2,3,3,3],
     }
   ];
